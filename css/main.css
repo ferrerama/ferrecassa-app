@@ -104,11 +104,28 @@ body {
 }
 
 /*======= MAPA =======*/
-.mapa {
-background: url(../img/Mapa.jpg);
-width: 100%;
-height: 500px;
+
+/* CLAVE 1: Anula Flexbox o Grid en el contenedor padre */
+#local {
+    /* Si Bootstrap lo hizo flexible, lo forzamos a ser un bloque normal */
+    display: block !important; 
 }
+
+/* CLAVE 2: Asegura que el contenedor de texto ocupe todo el ancho y se comporte como bloque */
+.texto-ubicacion {
+    width: 100% !important; /* Fuerza el ancho */
+    display: block !important; /* Fuerza el comportamiento de bloque */
+    margin-bottom: 20px;
+}
+
+/* CLAVE 3: Asegura que el mapa se comporte como un bloque de ancho completo */
+.mapa-incrustado {
+    width: 100% !important; /* Fuerza el ancho */
+    display: block !important; /* Fuerza a iniciar en una nueva línea */
+    height: 450px; 
+    border: none; 
+}
+
 
 #local {
     background-color: #f3f3f3;
