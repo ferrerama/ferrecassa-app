@@ -1,117 +1,211 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Ferrecas | Productos</title>
-  </head>
+<!-- 
+    ========================================================================================
+    PÁGINA: PRODUCTOS.HTML
+    CONTENIDO: Catálogo de Productos en formato de tarjeta (Grid de Bootstrap)
+    ========================================================================================
+-->
 
-  <body>
-    <!--
-    ============================================== -->
-    <!-- ENCABEZADO -->
-    <!--
-    ============================================== -->
-    <header class="container-fluid bg-primary
-    d-flex justify-content-center">
-    <p class="text-light mb-0 p-2
-    fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p> 	
+<!doctype html>
+<html lang="es">
+<head>
+    <!-- Configuración del Viewport para asegurar la adaptabilidad móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>Productos - Ferrecas</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Enlace a Bootstrap Icons para el botón "Volver Arriba" -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos Personalizados (si tienes un archivo main.css, asegúrate de que esté aquí) -->
+    <link rel="stylesheet" href="./css/main.css"> 
+</head>
+<body>
+
+    <!-- ============================================== -->
+    <!-- ENCABEZADO SUPERIOR (LÍNEA AZUL) -->
+    <!-- ============================================== -->
+    <header class="container-fluid bg-primary d-flex justify-content-center">
+        <!-- NÚMERO DE WHATSAPP ACTUALIZADO EN EL ENCABEZADO -->
+        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 3991 2120 | ferrecassa@gmail.com</p>
     </header>
-  
-    <!--
-    ============================================== -->
-    <!-- NAVEGACIÓN (Menú con enlaces a archivos) -->
-    <!--
-    ============================================== -->
+
+    <!-- ============================================== -->
+    <!-- BARRA DE NAVEGACIÓN (NAVBAR) -->
+    <!-- ID="menu" es requerido por js/main.js para el efecto sticky -->
+    <!-- ============================================== -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="menu">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <!--<span class="text-dark fs-5 fw-bold">Ferrecas</span>-->
-          <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 40px;" class="d-inline-block align-text-top">.
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <!-- Enlace de PRODUCTOS ACTIVO -->
-              <a class="nav-link active text-primary" aria-current="page" href="productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <!-- Enlace a la nueva página de Contacto -->
-              <a class="nav-link" href="contacto.html">Contacto</a>
-            </li>
-          </ul>
-          <div id="iconos">
-            <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook bg-primary"></i></a>
-            <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp bg-secondary"></i></a>
-          </div>
-          <form action="https://formsubmit.co/ferrecassa@gmail.com" method="POST" class="d-flex">
-            <input class="form-control me-2" type="email" name="Correo electronico" aria-label="email">
-            <input type="submit" value="Suscribirse" class="btn btn-primary btn-primary-outline-success">
-          </form>
+        <div class="container-fluid">
+            <!-- LOGO/MARCA -->
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/logo.jpg" alt="Logo de Ferrecas" style="height: 40px;" class="d-inline-block align-text-top">
+            </a>
+
+            <!-- Botón del menú móvil (Hamburger) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- CLASE 'active text-primary' para resaltar esta página -->
+                        <a class="nav-link active text-primary" aria-current="page" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+                <!-- Formulario de Suscripción/Búsqueda (a la derecha) -->
+                <form class="d-flex" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
+                    <div class="input-group">
+                        <input type="email" name="email" class="form-control" placeholder="Tu correo" aria-label="Correo de suscripción" required>
+                        <button class="btn btn-primary shadow-sm" type="submit">Suscribir</button>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
     </nav>
     
-    <!--
-    ============================================== -->
-    <!-- SECCIÓN DE PRODUCTOS (Reutilizando ACERCA DE NOSOTROS/EQUIPO) -->
-    <!--
-    ============================================== -->
-    <main class="container">
-      <section class="py-5">
-        <div class="w-75 m-auto text-center" id="equipo">
-            <h1 class="mb-2 fs2">Catálogo de <span class="text-primary">Productos.</span></h1>
-            <p class="fs-4">Tu socio de negocios confiable. Ofertamos productos comerciales de buena calidad y aceptación.</p>
+    <!-- ============================================== -->
+    <!-- SECCIÓN DE CONTENIDO PRINCIPAL: CATÁLOGO -->
+    <!-- ============================================== -->
+    <main class="container py-5">
+        
+        <!-- TÍTULO PRINCIPAL DE LA PÁGINA -->
+        <div class="text-center mb-5">
+            <h1 class="display-5 fw-bold text-dark">
+                Nuestro <span class="text-primary">Catálogo</span>
+            </h1>
+            <p class="lead text-secondary mt-3">
+                Explora la selección completa de productos de acero y materiales de construcción que ofrecemos.
+            </p>
         </div>
-        
-        <div class="mt-2 text-center">
-            <img class="img-fluid mb-4" src="./img/equipo.jpeg" alt="Inventario de Productos">
-        </div> 
-        
-        <div id="local" class="border-top border-2 p-5 bg-light"> 
-            <div class="texto-ubicacion w-75 mx-auto">
-                <div class="whapper">
-                    <h2 class="fs-4 fw-bold">Variedad y Calidad en Materiales</h2>
-                    <p class="fs-5 text-body">
-                      Ofrecemos una amplia gama de productos, incluyendo láminas troqueladas, costaneras, tubos galvanizados, 
-                      láminas galvanizadas Pantera, láminas translúcidas, tornillos y mucho más. Todo lo que necesita para su proyecto 
-                      de construcción o herrería.
-                    </p>
-                    <p class="fs-5 text-body">
-                      Si tiene alguna duda o necesita cotizar un material específico, no dude en contactarnos.
-                    </p>
+
+        <!-- FILA DE PRODUCTOS (Usa Grid de Bootstrap: 1 columna en móvil, 2 en tablet, 3 en desktop) -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+
+            <!-- INICIO TARJETA DE PRODUCTO 1 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/LaminaAluzincTroquelada.jpg -->
+                    <img src="./img/LaminaAluzincTroquelada.jpg" class="card-img-top" alt="Lamina Aluzinc Natural Troquelada" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Lámina Aluzinc Natural Troquelada</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            Ideal para techos y cubiertas. Alta resistencia a la corrosión y durabilidad en exteriores.
+                        </p>
+                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Aluzinc%20Natural%20Troquelada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
                 </div>
-            </div> 
-        </div> 
-      </section>
-    </main>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 1 -->
+           
+            <!-- INICIO TARJETA DE PRODUCTO 2 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/LaminaGalvanizadaTradicional.jpg -->
+                    <img src="./img/LaminaGalvanizadaTradicional.jpg" class="card-img-top" alt="Lamina Galvanizada Tradicional" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Lámina Galvanizada Tradicional</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            La opción clásica y más económica para cubiertas temporales o estructuras básicas.
+                        </p>
+                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Galvanizada%20Tradicional.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 2 -->
 
-    <!--
-    ============================================== -->
-    <!-- PIE DE LA PAGINA -->
-    <!--
-    ============================================== -->
-      <footer class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-        <p class="fs-5 px-3 pt-3"> Ferrecas &copy; Todos los derechos reservados 2022 </p>
-        <div id="iconos">
-          <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook"></i></a>
-          <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp"></i></a>
+            <!-- INICIO TARJETA DE PRODUCTO 3 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/CostaneraGalvanizada.jpg -->
+                    <img src="./img/CostaneraGalvanizada.jpg" class="card-img-top" alt="Costanera Galvanizada" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Costanera Galvanizada</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            El soporte estructural clave para techos y paredes, con acabado galvanizado de alta durabilidad.
+                        </p>
+                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20Costanera%20Galvanizada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 3 -->
+
+            <!-- INICIO TARJETA DE PRODUCTO 4 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
+                    <img src="./img/TuboGalvanizado.jpg" class="card-img-top" alt="Tubo Galvanizado" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Tubo Galvanizado</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            Tubos de acero resistentes a la oxidación, perfectos para estructuras de soporte y herrería.
+                        </p>
+                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 4 -->
+
+            <!-- INICIO TARJETA DE PRODUCTO 5 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
+                    <img src="./img/LaminaPolicarbonato.jpg" class="card-img-top" alt="Laminas de policarbonato" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Laminas de policarbonato</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            Laminas traslucidas, que permiten acompañar tu techo de laminas aluzinc, para dar claridad y ahorrar energia, permitiendo la entrada de luz.
+                        </p>
+                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 5 -->
+
         </div>
-      </footer>
+        <!-- FIN FILA DE PRODUCTOS -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
+    </main>
+    
+    <!-- ============================================== -->
+    <!-- PIE DE PÁGINA (FOOTER) - Asegúrate de copiarlo de tu archivo original si es más complejo -->
+    <!-- ============================================== -->
+    <footer class="container-fluid bg-dark text-white p-4 text-center mt-5">
+        <p class="mb-0">Ferrecas © Todos los derechos reservados 2024</p>
+        <!-- Íconos sociales de ejemplo -->
+        <div class="mt-2">
+            <a href="#" class="text-white mx-2"><i class="bi bi-facebook fs-4"></i></a>
+            <!-- WHATSAPP ACTUALIZADO EN EL FOOTER -->
+            <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2"><i class="bi bi-whatsapp fs-4"></i></a>
+        </div>
+    </footer>
+
+
+    <!-- ============================================== -->
+    <!-- SCRIPTS DE BOOTSTRAP Y PERSONALIZADOS -->
+    <!-- ============================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
-  </body>
+</body>
 </html>
