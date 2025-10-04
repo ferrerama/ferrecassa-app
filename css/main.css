@@ -42,6 +42,7 @@ body {
     }
     
     #bg-contacto {
+        position:relative;
         top:-110px;
     }
 }
@@ -80,18 +81,25 @@ body {
 
 #seccion-contacto {
     background-color: #1b2a4e;
-    min-height: 500px;
-    position: relative;
+    min-height: 550px;
+    /*position: relative;*/
+    display: flex; 
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
 }
+
 /*======= CONTACTOS FORMULARIO =======*/
 #contenedor-formulario{
-    position:absolute;
+    /*position:absolute;
     top:30%;
     left:50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
     background:#fbfafa ;
     border-radius: 5px;
     max-width: 246px;
+    padding: 20px; /* Añadimos padding para que el contenido no toque los bordes */
+    /* Agregamos una sombra suave para destacarlo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 #titulo-formulario {
     color: #3f3f3f;
@@ -129,7 +137,7 @@ body {
 
 #local {
     background-color: #f3f3f3;
-    padding-bottom: 300px;
+    /*padding-bottom: 300px;*/
     display:flex;
     justify-content: center;
 }
