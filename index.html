@@ -1,153 +1,354 @@
+<!-- 
+    ========================================================================================
+    PÁGINA: INDEX.HTML
+    CONTENIDO: Página de inicio con carrusel, introducción, destacados y sección de servicios.
+    VERSION: Pie de página mejorado visualmente, Favicon añadido y texto de suscripción alineado a la izquierda.
+    ========================================================================================
+-->
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/main.css">
-    <title>Ferrecas</title>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ******************************************** -->
+    <!-- NUEVA LÍNEA: FAVICON DE FERRECAS -->
+    <!-- Esto hará que el logo aparezca en la pestaña del navegador -->
+    <link rel="icon" type="image/jpeg" href="./img/Logo.jpg">
+    <!-- ******************************************** -->
 
-  <body>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons (se usa la versión más reciente en CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos Personalizados (si tienes un archivo main.css, asegúrate de que esté aquí) -->
+    <link rel="stylesheet" href="./css/main.css">
+    
+    <title>Ferrecas | Materiales de Construcción y Ferretería</title>
+</head>
+<body>
+
     <!--
     ============================================== -->
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO SUPERIOR (LÍNEA AZUL) -->
     <!--
     ============================================== -->
-    <header class="container-fluid bg-primary
-    d-flex justify-content-center">
-    <p class="text-light mb-0 p-2
-    fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p>  
-  </header>
-  
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="menu">
+    <header class="container-fluid bg-primary d-flex justify-content-center">
+        <!-- Teléfono fijo restaurado -->
+        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p>  
+    </header>
+    
+    <!--
+    ============================================== -->
+    <!-- BARRA DE NAVEGACIÓN (NAVBAR) -->
+    <!--
+    ============================================== -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3" id="menu">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-          <!--<span class="text-dark fs-5 fw-bold">Ferrecas</span>-->
-          <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 40px;" class="d-inline-block align-text-top">.
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active text-primary" aria-current="page" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="productos.html">Productos</a> 
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="contacto.html">Contacto</a> 
-                </li>
-            </ul>
-            <div id="iconos">
-              <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook bg-primary"></i></a>
-              <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp bg-secondary"></i></a>
+            <!-- LOGO/MARCA -->
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 45px;" class="d-inline-block align-text-top rounded">
+            </a>
+
+            <!-- Botón del menú móvil (Hamburger) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- CONTENEDOR DEL MENÚ Y REDES SOCIALES -->
+            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                <!-- LISTA DE ENLACES -->
+                <ul class="navbar-nav mb-2 mb-lg-0 fw-bold me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="productos.html">Productos</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="contacto.html">Contacto</a> 
+                    </li>
+                </ul>
+                
+                <!-- Redes Sociales y WhatsApp (alineadas a la derecha) -->
+                <div class="d-flex align-items-center">
+                    <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-primary me-3 fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/50239912120" target="_blank" class="text-success me-3 fs-5" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
             </div>
-            <form action="https://formsubmit.co/ferrecassa@gmail.com" method="POST" class="d-flex">
-              <input class="form-control me-2" type="email" name="Correo electronico" aria-label="email">
-              <input type="submit" value="Suscribirse" class="btn btn-primary btn-primary-outline-success">
-            </form>
-          </div>
         </div>
-      </nav>
+    </nav>
 
     <!--
     ============================================== -->
     <!-- SLIDER DE IMAGENES PRINCIPALES -->
     <!--
     ============================================== -->
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="3000">
-            <img src="./img/imagen1.jpg" class="d-block w-100" alt="slide1">
-          </div>
-          <div class="carousel-item" data-bs-internal="3000">
-            <img src="./img/imagen2.jpg" class="d-block w-100" alt="slide2">
-          </div>
-          <div class="carousel-item" data-bs-internal="3000">
-            <img src="./img/imagen3.jpg" class="d-block w-100" alt="slide3">
-          </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3500">
+                <img src="./img/Proyecto1.jpg" class="d-block w-100" alt="Construcción de cubierta metálica" style="height: 75vh; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-5 fw-bolder text-warning">¡Proyectos a la Medida!</h5>
+                    <p class="fs-5">Transformamos tus diseños en estructuras sólidas y duraderas.</p>
+                    <a href="contacto.html" class="btn btn-warning btn-lg fw-bold mt-2">Cotizar Ahora <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="./img/Proyecto2.jpg" class="d-block w-100" alt="Instalación de lámina galvanizada" style="height: 75vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="./img/Proyecto3.jpg" class="d-block w-100" alt="Estructura de techo en construcción" style="height: 75vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="./img/Proyecto4.jpg" class="d-block w-100" alt="Almacenamiento de tubos de acero" style="height: 75vh; object-fit: cover;">
+            </div>
+            <div class="carousel-item" data-bs-interval="3500">
+                <img src="./img/Proyecto5.jpg" class="d-block w-100" alt="Trabajo de herrería y soldadura" style="height: 75vh; object-fit: cover;">
+            </div>        
+        </div>
+        <!-- Botones de control del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
         </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
         </button>
     </div>
 
     <!--
     ============================================== -->
-    <!-- INTRODUCCIÓN -->
+    <!-- INTRODUCCIÓN Y SLOGAN -->
     <!--
     ============================================== -->
-<section class="w-50 mx-auto text-center pt-5" id="intro">
-    <h1 class="p-3 fs-2 border-top border-3">Materiales de contrucción de alta calidad y a tu alcance<span class="text-primary"> para tus proyectos.</span></h1>
-    <p class="p-3 fs-4"><span class="text-primary">En Ferrecas</span> te ayudamos a construir tus sueños.</p>
-</section>
+    <section class="container text-center py-5" id="intro">
+        <h1 class="display-5 fw-bold text-dark mb-3">
+            Somos tu aliado en <span class="text-primary">Materiales de Construcción</span> y Acero
+        </h1>
+        <p class="fs-4 text-secondary mx-auto" style="max-width: 800px;">
+            En Ferrecas te ofrecemos **calidad, resistencia y el mejor precio** en láminas, tubos y accesorios. Te ayudamos a construir tus sueños con la mejor asesoría técnica.
+        </p>
+        <a href="productos.html" class="btn btn-outline-primary btn-lg fw-bold mt-3">Explorar Productos <i class="bi bi-box-seam"></i></a>
+    </section>
+    
+    <!--
+    ============================================== -->
+    <!-- PRODUCTOS DESTACADOS (SOLUCIONES CLAVE) -->
+    <!--
+    ============================================== -->
+    <section class="container py-5 bg-light">
+        <h2 class="text-center display-6 fw-bold mb-5 text-dark">Nuestras Soluciones Clave</h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            <!-- DESTACADO 1: Láminas y Cubiertas -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                    <i class="bi bi-grid-3x3-gap-fill text-primary display-4 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Láminas y Cubiertas</h3>
+                        <p class="card-text text-secondary">Láminas galvanizadas Pantera, troqueladas y traslúcidas. Perfectas para techos y bodegas.</p>
+                        <a href="productos.html#laminas" class="btn btn-sm btn-primary mt-2">Ver Láminas</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DESTACADO 2: Acero Estructural -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                    <i class="bi bi-rulers text-warning display-4 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Acero Estructural</h3>
+                        <p class="card-text text-secondary">Costaneras y tubos galvanizados para estructuras fuertes y duraderas. Soporte garantizado.</p>
+                        <a href="productos.html#aceros" class="btn btn-sm btn-primary mt-2">Ver Aceros</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- DESTACADO 3: Fijación y Accesorios -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                    <i class="bi bi-gear-wide-connected text-success display-4 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold">Fijación y Accesorios</h3>
+                        <p class="card-text text-secondary">Tornillos, herrajes y elementos de sujeción para un acabado profesional en cada instalación.</p>
+                        <a href="productos.html#accesorios" class="btn btn-sm btn-primary mt-2">Ver Accesorios</a>
+                    </div>
+                </div>
+            </div>
 
-   <!--
+        </div>
+    </section>
+
+    <!--
     ============================================== -->
     <!-- SERVICIOS -->
     <!--
     ============================================== -->
-      <section class="container-fluid">
-        <div class="row w-75 mx-auto servicio-fila">
-            <div class="col-lg-6 col-md col-sm-12 d-flex my-5 icono-wrap">
-              <img src="img/ecomerce.jpeg" alt="venta de materiales de construcción" width="180" height="160">
-            <div>
-              <h3 class="fs-5 mt-4 px-4 pb-1">Venta de ferreteria</h3>
-              <p class="px-4">venta de materiales de construcción laminas troqueladas, costaneras y tubos galvanizados, laminas galvanizadas pantera, laminas traslucidas, tornillos y otros.</p>
+    <section class="container py-5">
+        <h2 class="text-center display-5 fw-bold mb-5 text-dark">Nuestros Servicios de Valor</h2>
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            
+            <!-- TARJETA DE SERVICIO 1: Venta de ferreteria -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/ecomerce.jpeg" class="img-fluid h-100" alt="venta de materiales de construcción" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-bold text-primary">Venta Inmediata de Materiales</h3>
+                                <p class="card-text text-secondary">Amplio inventario de materiales listos para despacho: láminas, costaneras, tubos, y accesorios de alta durabilidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        <div class="col-lg-6 col-md col-sm-12 d-flex my-5 icono-wrap">
-            <img src="img/Asesoria.jpeg" alt="Asesoria tecnica" width="180" height="160">
-          <div>
-            <h3 class="fs-5 mt-4 px-4 pb-1">Asesoria tecnica</h3>
-              <p class="px-4">Le asesoramos en su compra de productos y aplicación.</p>
-         </div>
-       </div>
-      </div>
-      <div class="row w-75 mx-auto servicio-fila">
-        <div class="col-lg-6 col-md col-sm-12 d-flex my-5 icono-wrap">
-          <img src="img/Entrega.jpeg" alt="Entrega a solicitud" width="180" height="160">
-          <div>
-            <h3 class="fs-5 mt-4 px-4 pb-1">Entrega</h3>
-              <p class="px-4">Le entregamos su producto a solicitud.</p>
-          </div>
+            
+            <!-- TARJETA DE SERVICIO 2: Asesoría tecnica -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                         <div class="col-md-4">
+                            <img src="img/Asesoria.jpeg" class="img-fluid h-100" alt="Asesoria tecnica" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-bold text-primary">Asesoría Técnica Especializada</h3>
+                                <p class="card-text text-secondary">Personal experto le ayuda a seleccionar la solución óptima y la aplicación correcta para cada etapa de su proyecto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TARJETA DE SERVICIO 3: Entrega -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/Entrega.jpeg" class="img-fluid h-100" alt="Entrega a solicitud" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-bold text-primary">Logística y Entrega a Obra</h3>
+                                <p class="card-text text-secondary">Garantizamos la entrega puntual y segura de su pedido directamente a su sitio de construcción, optimizando sus tiempos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TARJETA DE SERVICIO 4: Otros Servicios -->
+            <div class="col">
+                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="img/Servicios.jpg" class="img-fluid h-100" alt="Otros Servicios" style="object-fit: cover;">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h3 class="card-title fs-5 fw-bold text-primary">Servicios de Corte y Fabricación</h3>
+                                <p class="card-text text-secondary">Ofrecemos corte a medida de materiales y cotizaciones personalizadas, ayudando a reducir desperdicios y costos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-       <div class="col-lg-6 col-md col-sm-12 d-flex my-5 icono-wrap">
-         <img src="img/Servicios.jpg" alt="Otros Servicios" width="180" height="160">
-        <div>
-          <h3 class="fs-5 mt-4 px-4 pb-1">Otros servicios</h3>
-          <p class="px-4">Le ofertamos otros servicios relacionados.</p>
+    </section>
+
+    <!--
+    ============================================== -->
+    <!-- BANNER DE CONTACTO/COTIZACIÓN -->
+    <!--
+    ============================================== -->
+    <section class="container-fluid bg-primary text-white text-center py-5 mt-5">
+        <div class="container">
+            <h2 class="display-4 fw-bold mb-3">¿Listo para comenzar tu proyecto?</h2>
+            <p class="lead mb-4">¡Contáctanos hoy y obtén una cotización sin compromiso!</p>
+            <a href="contacto.html" class="btn btn-light btn-lg fw-bold shadow-lg">Solicitar Cotización <i class="bi bi-telephone"></i></a>
         </div>
-      </div>
-    </div>
-      </section>
-   
-      <!--
-      ============================================== -->
-      <!-- PIE DE LA PAGINA -->
-      <!--
-      ============================================== -->
-        <footer class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-          <p class="fs-5 px-3 pt-3"> Ferrecas &copy; Todos los derechos reservados 2022 </p>
-          <div id="iconos">
-            <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook"></i></a>
-            <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp"></i></a>
-          </div>
-        </footer>
+    </section>
+    
+    <!--
+    ============================================== -->
+    <!-- PIE DE LA PAGINA (FOOTER) - MEJORADO -->
+    <!--
+    ============================================== -->
+    <footer class="container-fluid bg-dark text-white p-5">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Columna 1: Contacto Principal y Redes -->
+                <div class="col-md-4 mb-4">
+                    <!-- Título en blanco para mejor contraste -->
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Contáctanos</h5>
+                    
+                    <!-- Teléfono y Email con íconos alineados -->
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-telephone-fill me-2 text-primary fs-5"></i>
+                        <p class="mb-0 fs-6">+502 2298 6874</p>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-fill me-2 text-primary fs-5"></i>
+                        <p class="mb-0 fs-6">ferrecassa@gmail.com</p>
+                    </div>
+
+                    <!-- Íconos sociales más grandes y espaciados -->
+                    <div class="mt-4">
+                        <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-white mx-2 fs-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2 fs-3" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación rápida (alineada a la izquierda) -->
+                <div class="col-md-4 mb-4">
+                     <!-- Título en blanco para mejor contraste -->
+                     <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Enlaces Rápidos</h5>
+                     <ul class="list-unstyled">
+                        <li class="mb-1"><a href="index.html" class="text-white text-decoration-none hover-link">Inicio</a></li>
+                        <li class="mb-1"><a href="productos.html" class="text-white text-decoration-none hover-link">Productos</a></li>
+                        <li class="mb-1"><a href="contacto.html" class="text-white text-decoration-none hover-link">Contacto y Cotizaciones</a></li>
+                     </ul>
+                </div>
+
+                <!-- Columna 3: Formulario de Suscripción -->
+                <div class="col-md-4 mb-4">
+                    <!-- Título en blanco para mejor contraste -->
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Recibe Ofertas Exclusivas</h5>
+                    <!-- SE AÑADE LA CLASE text-start para alinear el texto a la izquierda -->
+                    <p class="fs-6 text-white-50 text-start">Sé el primero en saber sobre nuevos productos y promociones.</p>
+                    <form class="d-flex" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
+                        <div class="input-group">
+                            <input class="form-control form-control-sm" type="email" name="Correo electronico" placeholder="Tu correo aquí" aria-label="email" required>
+                            <button type="submit" class="btn btn-primary btn-sm shadow-sm">Suscribir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Derechos de autor (se mantiene centrado en una línea separada) -->
+        <div class="container border-top border-secondary pt-3 mt-4 text-center">
+             <p class="mb-0 fs-6 text-white-50">Ferrecas © Todos los derechos reservados 2024</p>
+        </div>
+    </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
-  </body>
+</body>
 </html>
