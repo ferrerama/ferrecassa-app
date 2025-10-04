@@ -46,8 +46,10 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <!-- CAMBIO CLAVE 1: Añadir 'justify-content-start' al navbar-collapse para alinear a la izquierda -->
+            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                <!-- CAMBIO CLAVE 2: Eliminamos 'me-auto' y dejamos solo 'mb-2 mb-lg-0' para que ocupe el espacio mínimo necesario -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Inicio</a>
                     </li>
@@ -60,7 +62,8 @@
                     </li>
                 </ul>
                 <!-- Formulario de Suscripción/Búsqueda (a la derecha) -->
-                <form class="d-flex" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
+                <!-- Añadimos 'ms-auto' (margin-start auto) para empujar el formulario lo más a la derecha posible -->
+                <form class="d-flex ms-auto" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
                     <div class="input-group">
                         <input type="email" name="email" class="form-control" placeholder="Tu correo" aria-label="Correo de suscripción" required>
                         <button class="btn btn-primary shadow-sm" type="submit">Suscribir</button>
@@ -98,7 +101,7 @@
                         <p class="card-text text-secondary flex-grow-1">
                             Ideal para techos y cubiertas. Alta resistencia a la corrosión y durabilidad en exteriores.
                         </p>
-                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
                         <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Aluzinc%20Natural%20Troquelada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
                             Cotizar por WhatsApp
                         </a>
@@ -117,7 +120,7 @@
                         <p class="card-text text-secondary flex-grow-1">
                             La opción clásica y más económica para cubiertas temporales o estructuras básicas.
                         </p>
-                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
                         <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Galvanizada%20Tradicional.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
                             Cotizar por WhatsApp
                         </a>
@@ -136,7 +139,7 @@
                         <p class="card-text text-secondary flex-grow-1">
                             El soporte estructural clave para techos y paredes, con acabado galvanizado de alta durabilidad.
                         </p>
-                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
                         <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20Costanera%20Galvanizada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
                             Cotizar por WhatsApp
                         </a>
@@ -155,7 +158,7 @@
                         <p class="card-text text-secondary flex-grow-1">
                             Tubos de acero resistentes a la oxidación, perfectos para estructuras de soporte y herrería.
                         </p>
-                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
                         <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
                             Cotizar por WhatsApp
                         </a>
@@ -163,18 +166,18 @@
                 </div>
             </div>
             <!-- FIN TARJETA DE PRODUCTO 4 -->
-             
+
             <!-- INICIO TARJETA DE PRODUCTO 5 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
                     <!-- RUTA: ./img/TuboGalvanizado.jpg -->
-                    <img src="./img/LaminaPolicarbonato.jpg" class="card-img-top" alt="Lamina de policarbonato" style="height: 250px; object-fit: cover;">
+                    <img src="./img/LaminaPolicarbonato.jpg" class="card-img-top" alt="Lamina Policarbonato" style="height: 250px; object-fit: cover;">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold text-dark">Lamina de Policarbonato</h5>
+                        <h5 class="card-title fw-bold text-dark">Lamina policarbonato</h5>
                         <p class="card-text text-secondary flex-grow-1">
-                            Lamina de policarbonato, para brindar a tu techo de aluzinc mas claridad, para ahorrar energía.
+                            Laminas policarbonato para acompañar tu techo de aluzinc, para ahorrar energía con entrada de luz solar necesaria.
                         </p>
-                        <!-- WHATSAPP ACTUALIZADO: Enlace directo wa.me con texto prellenado -->
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
                         <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
                             Cotizar por WhatsApp
                         </a>
@@ -183,13 +186,31 @@
             </div>
             <!-- FIN TARJETA DE PRODUCTO 5 -->
 
+            <!-- INICIO TARJETA DE PRODUCTO 6 -->
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
+                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
+                    <img src="./img/Tejas española e italiana.jpg" class="card-img-top" alt="Tejas" style="height: 250px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark">Tejas españolas e italianas</h5>
+                        <p class="card-text text-secondary flex-grow-1">
+                            Tejas de alta belleza en sustitucion de tejas tradicionales de barro, para aseguridad un diseño hermoso.
+                        </p>
+                        <!-- ENLACE DE WHATSAPP DIRECTO -->
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
+                            Cotizar por WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- FIN TARJETA DE PRODUCTO 6 -->
         </div>
         <!-- FIN FILA DE PRODUCTOS -->
 
     </main>
     
     <!-- ============================================== -->
-    <!-- PIE DE PÁGINA (FOOTER) - Asegúrate de copiarlo de tu archivo original si es más complejo -->
+    <!-- PIE DE PÁGINA (FOOTER) -->
     <!-- ============================================== -->
     <footer class="container-fluid bg-dark text-white p-4 text-center mt-5">
         <p class="mb-0">Ferrecas © Todos los derechos reservados 2024</p>
