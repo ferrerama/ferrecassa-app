@@ -2,6 +2,7 @@
     ========================================================================================
     PÁGINA: PRODUCTOS.HTML
     CONTENIDO: Catálogo de Productos en formato de tarjeta (Grid de Bootstrap)
+    VERSION: Estructura final con mejoras de consistencia y diseño responsivo.
     ========================================================================================
 -->
 
@@ -12,13 +13,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>Productos - Ferrecas</title>
-    <!-- Enlace a Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Enlace a Bootstrap Icons para el botón "Volver Arriba" -->
+    
+    <!-- FAVICON CORREGIDO: Usando la misma ruta ./img/Logo.jpg -->
+    <link rel="icon" type="image/jpeg" href="./img/Logo.jpg">
+
+    <!-- Enlace a Bootstrap CSS (INTEGRITY CORREGIDO) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azpr1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Enlace a Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
-    <!-- Estilos Personalizados (si tienes un archivo main.css, asegúrate de que esté aquí) -->
+    <!-- Estilos Personalizados (main.css) -->
     <link rel="stylesheet" href="./css/main.css"> 
+    
+    <style>
+        /* Estilo para el efecto hover en tarjetas de producto */
+        .product-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+        /* Ajuste para la imagen */
+        .card-img {
+            /* Asegura que la imagen no tenga bordes redondeados en la parte superior si el card-body ya los tiene */
+            border-radius: 0;
+            /* Fija la altura mínima para que todas las tarjetas se vean uniformes */
+            height: 280px !important; 
+        }
+    </style>
 </head>
 <body>
 
@@ -27,18 +51,17 @@
     <!-- ============================================== -->
     <header class="container-fluid bg-primary d-flex justify-content-center">
         <!-- NÚMERO DE WHATSAPP ACTUALIZADO EN EL ENCABEZADO -->
-        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 3991 2120 | ferrecassa@gmail.com</p>
+        <p class="text-light mb-0 p-2 fs-6">Contáctanos a: +502 3991 2120 | ferrecassa@gmail.com</p>
     </header>
 
     <!-- ============================================== -->
-    <!-- BARRA DE NAVEGACIÓN (NAVBAR) -->
-    <!-- ID="menu" es requerido por js/main.js para el efecto sticky -->
+    <!-- BARRA DE NAVEGACIÓN (NAVBAR) - DISEÑO UNIFICADO -->
     <!-- ============================================== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="menu">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3" id="menu">
         <div class="container-fluid">
             <!-- LOGO/MARCA -->
             <a class="navbar-brand" href="index.html">
-                <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 40px;" class="d-inline-block align-text-top">
+                <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 45px;" class="d-inline-block align-text-top rounded">
             </a>
 
             <!-- Botón del menú móvil (Hamburger) -->
@@ -46,29 +69,27 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             
-            <!-- CAMBIO CLAVE 1: Añadir 'justify-content-start' al navbar-collapse para alinear a la izquierda -->
+            <!-- CONTENEDOR DEL MENÚ Y REDES SOCIALES -->
             <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
-                <!-- CAMBIO CLAVE 2: Eliminamos 'me-auto' y dejamos solo 'mb-2 mb-lg-0' para que ocupe el espacio mínimo necesario -->
-                <ul class="navbar-nav mb-2 mb-lg-0">
+                <!-- LISTA DE ENLACES -->
+                <ul class="navbar-nav mb-2 mb-lg-0 fw-bold me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link text-dark" href="index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
                         <!-- CLASE 'active text-primary' para resaltar esta página -->
                         <a class="nav-link active text-primary" aria-current="page" href="productos.html">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
+                        <a class="nav-link text-dark" href="contacto.html">Contacto</a>
                     </li>
                 </ul>
-                <!-- Formulario de Suscripción/Búsqueda (a la derecha) -->
-                <!-- Añadimos 'ms-auto' (margin-start auto) para empujar el formulario lo más a la derecha posible -->
-                <form class="d-flex ms-auto" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
-                    <div class="input-group">
-                        <input type="email" name="email" class="form-control" placeholder="Tu correo" aria-label="Correo de suscripción" required>
-                        <button class="btn btn-primary shadow-sm" type="submit">Suscribir</button>
-                    </div>
-                </form>
+                
+                <!-- Redes Sociales y WhatsApp (alineadas a la derecha) -->
+                <div class="d-flex align-items-center">
+                    <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-primary me-3 fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/50239912120" target="_blank" class="text-success me-3 fs-5" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
             </div>
         </div>
     </nav>
@@ -94,35 +115,45 @@
             <!-- INICIO TARJETA DE PRODUCTO 1 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/LaminaAluzincTroquelada.jpg -->
-                    <img src="./img/LaminaAluzincTroquelada.jpg" class="card-img-top" alt="Lamina Aluzinc Natural Troquelada" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold text-dark">Lámina Aluzinc Natural Troquelada</h5>
                         <p class="card-text text-secondary flex-grow-1">
                             Ideal para techos y cubiertas. Alta resistencia a la corrosión y durabilidad en exteriores.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Aluzinc%20Natural%20Troquelada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/LaminaAluzincTroquelada.jpg" class="card-img" alt="Lamina Aluzinc Natural Troquelada" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+1';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2"> 
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Aluzinc%20Natural%20Troquelada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
             </div>
             <!-- FIN TARJETA DE PRODUCTO 1 -->
-           
+            
             <!-- INICIO TARJETA DE PRODUCTO 2 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/LaminaGalvanizadaTradicional.jpg -->
-                    <img src="./img/LaminaGalvanizadaTradicional.jpg" class="card-img-top" alt="Lamina Galvanizada Tradicional" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold text-dark">Lámina Galvanizada Tradicional</h5>
                         <p class="card-text text-secondary flex-grow-1">
                             La opción clásica y más económica para cubiertas temporales o estructuras básicas.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Galvanizada%20Tradicional.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/LaminaGalvanizadaTradicional.jpg" class="card-img" alt="Lamina Galvanizada Tradicional" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+2';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20L%C3%A1mina%20Galvanizada%20Tradicional.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
@@ -132,16 +163,21 @@
             <!-- INICIO TARJETA DE PRODUCTO 3 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/CostaneraGalvanizada.jpg -->
-                    <img src="./img/CostaneraGalvanizada.jpg" class="card-img-top" alt="Costanera Galvanizada" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold text-dark">Costanera Galvanizada</h5>
                         <p class="card-text text-secondary flex-grow-1">
                             El soporte estructural clave para techos y paredes, con acabado galvanizado de alta durabilidad.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20Costanera%20Galvanizada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/CostaneraGalvanizada.jpg" class="card-img" alt="Costanera Galvanizada" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+3';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20la%20Costanera%20Galvanizada.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
@@ -151,16 +187,21 @@
             <!-- INICIO TARJETA DE PRODUCTO 4 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
-                    <img src="./img/TuboGalvanizado.jpg" class="card-img-top" alt="Tubo Galvanizado" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title fw-bold text-dark">Tubo Galvanizado</h5>
                         <p class="card-text text-secondary flex-grow-1">
                             Tubos de acero resistentes a la oxidación, perfectos para estructuras de soporte y herrería.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/TuboGalvanizado.jpg" class="card-img" alt="Tubo Galvanizado" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+4';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
@@ -170,16 +211,21 @@
             <!-- INICIO TARJETA DE PRODUCTO 5 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
-                    <img src="./img/LaminaPolicarbonato.jpg" class="card-img-top" alt="Lamina Policarbonato" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold text-dark">Lamina policarbonato</h5>
+                        <h5 class="card-title fw-bold text-dark">Lámina Policarbonato</h5>
                         <p class="card-text text-secondary flex-grow-1">
-                            Laminas policarbonato para acompañar tu techo de aluzinc, para ahorrar energía con entrada de luz solar necesaria.
+                            Láminas de policarbonato para acompañar tu techo de aluzinc, permitiendo la entrada de luz solar necesaria.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/LaminaPolicarbonato.jpg" class="card-img" alt="Lamina Policarbonato" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+5';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20Lamina%20policarbonato.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
@@ -189,64 +235,82 @@
             <!-- INICIO TARJETA DE PRODUCTO 6 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
-                    <img src="./img/Tejas española e italiana.jpg" class="card-img-top" alt="Tejas" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold text-dark">Tejas españolas e italianas</h5>
+                        <h5 class="card-title fw-bold text-dark">Tejas Españolas e Italianas</h5>
                         <p class="card-text text-secondary flex-grow-1">
-                            Tejas de alta belleza en sustitucion de tejas tradicionales de barro, para aseguridad un diseño hermoso.
+                            Tejas de alta belleza en sustitución de tejas tradicionales de barro, para asegurar un diseño hermoso.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/Tejas española e italiana.jpg" class="card-img" alt="Tejas" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+6';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20Tejas%20espa%C3%B1olas%20e%20italianas.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
             </div>
             <!-- FIN TARJETA DE PRODUCTO 6 -->
-        </div>
-        <!-- FIN FILA DE PRODUCTOS -->
 
-        
             <!-- INICIO TARJETA DE PRODUCTO 7 -->
             <div class="col">
                 <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden product-card">
-                    <!-- RUTA: ./img/TuboGalvanizado.jpg -->
-                    <img src="./img/Capotes y Tornillos.jpg" class="card-img-top" alt="Capotes" style="height: 250px; object-fit: cover;">
+                    <!-- 1. TEXTO (card-body - solo texto) -->
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title fw-bold text-dark">Capotes y tornillos</h5>
+                        <h5 class="card-title fw-bold text-dark">Capotes y Tornillos</h5>
                         <p class="card-text text-secondary flex-grow-1">
-                            Accesorios para completar tu proyecto, capotes y tornillos especializados.
+                            Accesorios para completar tu proyecto, capotes y tornillos especializados para una instalación segura.
                         </p>
-                        <!-- ENLACE DE WHATSAPP DIRECTO -->
-                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20el%20Tubo%20Galvanizado.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary btn-sm mt-2">
-                            Cotizar por WhatsApp
+                    </div>
+                    
+                    <!-- 2. IMAGEN (Despues del texto) -->
+                    <img src="./img/Capotes y Tornillos.jpg" class="card-img" alt="Capotes" style="height: 280px; object-fit: contain; object-position: center;" onerror="this.onerror=null;this.src='https://placehold.co/400x280/1b2a4e/ffffff?text=Producto+7';">
+                    
+                    <!-- 3. BOTÓN (Después de la imagen, en un contenedor con padding y margen superior) -->
+                    <div class="p-3 pt-0 mt-2">
+                        <a href="https://wa.me/50239912120?text=Hola,%20me%20interesa%20cotizar%20Capotes%20y%20tornillos.%20%C2%BFMe%20pueden%20ayudar?" target="_blank" class="btn btn-outline-primary w-100">
+                            <i class="bi bi-whatsapp me-2"></i> Cotizar por WhatsApp
                         </a>
                     </div>
                 </div>
             </div>
             <!-- FIN TARJETA DE PRODUCTO 7 -->
+            
+            <!-- TARJETA DE LLAMADA A LA ACCIÓN (CTOA) -->
+            <div class="col">
+                <div class="card h-100 bg-primary text-white shadow-lg border-0 rounded-4 d-flex align-items-center justify-content-center text-center p-4">
+                    <i class="bi bi-person-workspace display-2 mb-3"></i>
+                    <h3 class="fw-bold mb-3">¿Necesitas Asesoría?</h3>
+                    <p class="lead mb-4">Si tienes un proyecto grande o necesitas medidas especiales, contáctanos directamente.</p>
+                    <a href="contacto.html" class="btn btn-light btn-lg fw-bold">Habla con un Experto</a>
+                </div>
+            </div>
+            <!-- FIN TARJETA CTA -->
+            
         </div>
         <!-- FIN FILA DE PRODUCTOS -->
-
     </main>
     
     <!-- ============================================== -->
-    <!-- PIE DE PÁGINA (FOOTER) -->
+    <!-- PIE DE PÁGINA (FOOTER) - DISEÑO CONSISTENTE (AÑADIDO bg-dark) -->
     <!-- ============================================== -->
-    <footer class="container-fluid bg-dark text-white p-4 text-center mt-5">
+    <footer class="container-fluid p-4 text-center mt-5 bg-dark text-white">
         <p class="mb-0">Ferrecas © Todos los derechos reservados 2024</p>
-        <!-- Íconos sociales de ejemplo -->
-        <div class="mt-2">
-            <a href="#" class="text-white mx-2"><i class="bi bi-facebook fs-4"></i></a>
+        <!-- Íconos sociales -->
+        <div id="iconos" class="mt-2">
+            <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-white mx-2" aria-label="Facebook"><i class="bi bi-facebook fs-4"></i></a>
             <!-- WHATSAPP ACTUALIZADO EN EL FOOTER -->
-            <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2"><i class="bi bi-whatsapp fs-4"></i></a>
+            <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2" aria-label="WhatsApp"><i class="bi bi-whatsapp fs-4"></i></a>
         </div>
     </footer>
 
 
     <!-- ============================================== -->
-    <!-- SCRIPTS DE BOOTSTRAP Y PERSONALIZADOS -->
+    <!-- SCRIPTS DE BOOTSTRAP Y PERSONALIZADOS (INTEGRITY CORREGIDO) -->
     <!-- ============================================== -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>

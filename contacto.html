@@ -1,65 +1,93 @@
+<!-- 
+    ========================================================================================
+    PÁGINA: CONTACTO.HTML
+    CONTENIDO: Formulario de contacto, información de contacto y mapa de ubicación.
+    VERSION: Ajuste final de proporciones: título más contenido y formulario con ancho optimizado (600px).
+    ========================================================================================
+-->
 <!doctype html>
-<html lang="en">
-  <head>
+<html lang="es">
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- FAVICON DE FERRECAS -->
+    <link rel="icon" type="image/jpeg" href="./img/Logo.jpg">
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- Bootstrap Icons (Versión consistente con index.html) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <!-- Estilos Personalizados (si tienes un archivo main.css, asegúrate de que esté aquí) -->
     <link rel="stylesheet" href="./css/main.css">
-    <title>Ferrecas | Contacto</title>
-  </head>
+    
+    <title>Ferrecas | Contacto y Cotizaciones</title>
 
-  <body>
+    <style>
+        /* Estilos básicos para el fondo de contacto si se mantiene el SVG */
+        #bg-contacto svg {
+            display: block;
+            margin-bottom: -1px; /* Corrige pequeños espacios en blanco */
+        }
+        /* Alinea el contenido del formulario para que no se pegue a los bordes */
+        #contenedor-formulario {
+            padding-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
     <!--
     ============================================== -->
-    <!-- ENCABEZADO -->
+    <!-- ENCABEZADO SUPERIOR (LÍNEA AZUL) -->
     <!--
     ============================================== -->
-    <header class="container-fluid bg-primary
-    d-flex justify-content-center">
-    <p class="text-light mb-0 p-2
-    fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p> 	
+    <header class="container-fluid bg-primary d-flex justify-content-center">
+        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p>  
     </header>
-  
+    
     <!--
     ============================================== -->
-    <!-- NAVEGACIÓN (Menú con enlaces a archivos) -->
+    <!-- BARRA DE NAVEGACIÓN (NAVBAR) - Sincronizado con index.html -->
     <!--
     ============================================== -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3" id="menu">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <!--<span class="text-dark fs-5 fw-bold">Ferrecas</span>-->
-          <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 40px;" class="d-inline-block align-text-top">.
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="productos.html">Productos</a>
-            </li>
-            <li class="nav-item">
-              <!-- Enlace de CONTACTO ACTIVO -->
-              <a class="nav-link active text-primary" aria-current="page" href="contacto.html">Contacto</a>
-            </li>
-          </ul>
-          <div id="iconos">
-            <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook bg-primary"></i></a>
-            <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp bg-secondary"></i></a>
-          </div>
-          <form action="https://formsubmit.co/ferrecassa@gmail.com" method="POST" class="d-flex">
-            <input class="form-control me-2" type="email" name="Correo electronico" aria-label="email">
-            <input type="submit" value="Suscribirse" class="btn btn-primary btn-primary-outline-success">
-          </form>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm p-3" id="menu">
+        <div class="container-fluid">
+            <!-- LOGO/MARCA -->
+            <a class="navbar-brand" href="index.html">
+                <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 45px;" class="d-inline-block align-text-top rounded">
+            </a>
+
+            <!-- Botón del menú móvil (Hamburger) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- CONTENEDOR DEL MENÚ Y REDES SOCIALES -->
+            <div class="collapse navbar-collapse justify-content-start" id="navbarSupportedContent">
+                <!-- LISTA DE ENLACES -->
+                <ul class="navbar-nav mb-2 mb-lg-0 fw-bold me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="productos.html">Productos</a> 
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-primary" aria-current="page" href="contacto.html">Contacto</a> 
+                    </li>
+                </ul>
+                
+                <!-- Redes Sociales (alineadas a la derecha) -->
+                <div class="d-flex align-items-center">
+                    <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-primary me-3 fs-5" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://wa.me/50239912120" target="_blank" class="text-success me-3 fs-5" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
-      </div>
     </nav>
     
     <!--
@@ -68,94 +96,159 @@
     <!--
     ============================================== -->
     <main>
-      <section id="seccion-contacto" class="border-botton border-secondary border-2 pt-5">
-        <div id="bg-contacto">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <!-- La onda amarilla sigue siendo el fondo de la sección -->
-            <path fill="#ffd700" fill-opacity="1" d="M0,160L1440,192L1440,
-            320L0,320Z"></path></svg>
-        </div>
+        <section id="seccion-contacto" class="pt-5 bg-light">
+            <!-- Se utiliza un SVG con color primario para la onda de fondo (opcional) -->
+            <div id="bg-contacto">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <!-- Color azul primario (o similar) para la consistencia del tema -->
+                    <path fill="#0d6efd" fill-opacity="0.1" d="M0,160L1440,192L1440,
+                    320L0,320Z"></path>
+                </svg>
+            </div>
 
-        <!-- 
-        MODIFICACIÓN CLAVE: 
-        1. Se añade la clase 'pb-5' al contenedor para dar espacio extra en la parte inferior.
-        2. Se aplica un estilo directo al 'div' del formulario para que tenga un ancho fijo y se centre horizontalmente. 
-        -->
-        <div class="container pb-5" id="contenedor-formulario" style="position: relative; z-index: 10;">
-          <div id="titulo-formulario" class="text-center mb-4">
-            <!-- La imagen se mantiene centrada -->
-            <div><img src="./img/contacto.jpg" alt="contacto" class="img-fluid"></div>
-            <h2>Contactanos</h2>
-            <p class="fs-5">Estamos para servirte. Envíanos un mensaje o visítanos.</p>
-          </div>
+            <div class="container pb-5" id="contenedor-formulario" style="position: relative; z-index: 10;">
+                <div id="titulo-formulario" class="text-center mb-5">
+                    
+                    <!-- 
+                        AJUSTE CLAVE 1: Título más contenido y uniforme (display-4).
+                        Esto reduce el tamaño total y mejora la proporción.
+                    -->
+                    <h2 class="display-4 fw-bold text-dark mb-2">Contáctanos y Cotiza</h2>
 
-          <!-- Estilo para centrar el formulario dentro del div "contenedor-formulario" -->
-          <form action="https://formsubmit.co/ferrecassa@gmail.com" method="POST" class="mx-auto" style="max-width: 400px;"> 
-            <label for="nombre">Nombre</label>
-            <input type="text" name="name" required>
-    
-            <label for="email">Correo</label>
-            <input type="email" name="email" required>
-    
-            <label for="subject">Asunto</label>
-            <input type="text" name="subject" required>
-    
-            <label for="coments">Hacer sus consultas aqui</label>
-            <textarea name="coments" cols="21" rows="3" required></textarea>
-
-            <input type="submit" value="Enviar Mensaje"class="btn btn-primary btn-primary-outline-success">
-
-            <input type="hidden" name="_next" value="http://www.ferrecassa.com/">
-            <input type="hidden" name="_captcha" value="false">
-          </form>
-        
-        </div>
-      </section>
-
-      <!--
-      ============================================== -->
-      <!-- MAPA DE UBICACIÓN -->
-      <!--
-      ============================================== -->
-      <section>
-          <!-- Se elimina cualquier margen inferior (mb-0) para asegurar que el footer quede justo debajo del mapa -->
-          <div id="local" class="border-top border-2 mb-0"> 
-            <div class="texto-ubicacion p-4">
-                <div class="whapper w-75 mx-auto">
-                    <h2 class="fs-4 fw-bold">Estamos ubicados en Ciudad San Cristobal, Boulevard Principal</h2>
-                    <p class="fs-5 text-body">Visítanos en nuestra ubicación para ver nuestro inventario y obtener asesoría en persona.</p>
+                    <p class="fs-5 text-secondary mx-auto" style="max-width: 600px;">
+                        Estamos listos para atender tus requerimientos. Envíanos un mensaje para solicitar una cotización o asesoría.
+                    </p>
+                    <div><img src="./img/contacto.jpg" alt="contacto" class="img-fluid rounded-3 shadow-sm mt-3" style="max-height: 200px; object-fit: cover;"></div>
                 </div>
-            </div> 
+
+                <!-- 
+                    AJUSTE CLAVE 2: Reducción del ancho máximo del formulario a 600px.
+                    Esto lo hace visualmente más compacto y centrado.
+                -->
+                <form action="https://formsubmit.co/ferrecassa@gmail.com" method="POST" class="mx-auto p-4 bg-white rounded-4 shadow-lg" style="max-width: 600px;"> 
+                    
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label fw-bold">Nombre Completo</label>
+                        <input type="text" name="name" id="nombre" class="form-control" placeholder="Escribe tu nombre aquí" required>
+                    </div>
             
-            <iframe 
-                class="mapa-incrustado"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.736344779021!2d-90.60647932841084!3d14.614089676753341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1d5e2f7fcbb%3A0xcf80303d0cf63d25!2sFerrecas!5e0!3m2!1ses-419!2sgt!4v1759437728565!5m2!1ses-419!2sgt" 
-                width="100%" 
-                height="450" 
-                style="border:0; display: block;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-          </div> 
-      </section>
+                    <div class="mb-3">
+                        <label for="email" class="form-label fw-bold">Correo Electrónico</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="ejemplo@correo.com" required>
+                    </div>
+            
+                    <div class="mb-3">
+                        <label for="subject" class="form-label fw-bold">Asunto / Tipo de Proyecto</label>
+                        <input type="text" name="subject" id="subject" class="form-control" placeholder="Ej: Cotización de láminas para techo" required>
+                    </div>
+            
+                    <div class="mb-4">
+                        <label for="coments" class="form-label fw-bold">Detalle de tu Consulta</label>
+                        <textarea name="coments" id="coments" class="form-control" rows="5" placeholder="Especifica los materiales o el servicio que necesitas (medidas, cantidades, etc.)" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold shadow-sm">
+                        Enviar Mensaje y Cotizar <i class="bi bi-send-fill"></i>
+                    </button>
+
+                    <!-- Campos ocultos de FormSubmit -->
+                    <input type="hidden" name="_next" value="http://www.ferrecassa.com/">
+                    <input type="hidden" name="_captcha" value="false">
+                </form>
+            
+            </div>
+        </section>
+
+        <!--
+        ============================================== -->
+        <!-- MAPA DE UBICACIÓN -->
+        <!--
+        ============================================== -->
+        <section class="mt-5">
+            <div id="local" class="border-top border-2 border-primary pt-5"> 
+                <div class="container pb-4">
+                    <div class="whapper w-75 mx-auto text-center">
+                        <h2 class="display-6 fw-bold text-dark mb-3">Visítanos en Nuestra Tienda</h2>
+                        <p class="fs-5 text-secondary">
+                            Estamos ubicados en **Ciudad San Cristobal, Boulevard Principal**. Ven y conoce nuestro inventario de materiales de alta calidad.
+                        </p>
+                    </div>
+                </div> 
+                
+                <iframe 
+                    class="mapa-incrustado"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3860.736344779021!2d-90.60647932841084!3d14.614089676753341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8589a1d5e2f7fcbb%3A0xcf80303d0cf63d25!2sFerrecas!5e0!3m2!1ses-419!2sgt!4v1759437728565!5m2!1ses-419!2sgt" 
+                    width="100%" 
+                    height="450" 
+                    style="border:0; display: block;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div> 
+        </section>
     </main>
 
     <!--
     ============================================== -->
-    <!-- PIE DE LA PAGINA -->
+    <!-- PIE DE LA PAGINA (FOOTER) - Sincronizado con index.html -->
     <!--
     ============================================== -->
-      <footer class="w-100 d-flex align-items-center justify-content-center flex-wrap">
-        <p class="fs-5 px-3 pt-3"> Ferrecas &copy; Todos los derechos reservados 2022 </p>
-        <div id="iconos">
-          <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA"><i class="bi bi-facebook"></i></a>
-          <a href="https://wa.me/50239912120"><i class="bi bi-whatsapp"></i></a>
+    <footer class="container-fluid bg-dark text-white p-5">
+        <div class="container">
+            <div class="row">
+                
+                <!-- Columna 1: Contacto Principal y Redes -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Contáctanos</h5>
+                    
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-telephone-fill me-2 text-primary fs-5"></i>
+                        <p class="mb-0 fs-6">+502 2298 6874</p>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope-fill me-2 text-primary fs-5"></i>
+                        <p class="mb-0 fs-6">ferrecassa@gmail.com</p>
+                    </div>
+
+                    <div class="mt-4">
+                        <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-white mx-2 fs-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2 fs-3" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Columna 2: Navegación rápida -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-1"><a href="index.html" class="text-white text-decoration-none hover-link">Inicio</a></li>
+                        <li class="mb-1"><a href="productos.html" class="text-white text-decoration-none hover-link">Productos</a></li>
+                        <li class="mb-1"><a href="contacto.html" class="text-white text-decoration-none hover-link">Contacto y Cotizaciones</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Formulario de Suscripción -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Recibe Ofertas Exclusivas</h5>
+                    <p class="fs-6 text-white-50 text-start">Sé el primero en saber sobre nuevos productos y promociones.</p>
+                    <form class="d-flex" action="https://formsubmit.co/ferrecassa@gmail.com" method="POST">
+                        <div class="input-group">
+                            <input class="form-control form-control-sm" type="email" name="Correo electronico" placeholder="Tu correo aquí" aria-label="email" required>
+                            <button type="submit" class="btn btn-primary btn-sm shadow-sm">Suscribir</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </footer>
+        
+        <!-- Derechos de autor -->
+        <div class="container border-top border-secondary pt-3 mt-4 text-center">
+             <p class="mb-0 fs-6 text-white-50">Ferrecas © Todos los derechos reservados 2024</p>
+        </div>
+    </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
-  </body>
+</body>
 </html>

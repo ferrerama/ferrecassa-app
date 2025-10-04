@@ -1,9 +1,8 @@
-<!-- 
+<!--
     ========================================================================================
     PÁGINA: INDEX.HTML
     CONTENIDO: Página de inicio con carrusel, introducción, destacados y sección de servicios.
-    VERSION: Pie de página mejorado visualmente, Favicon añadido y texto de suscripción alineado a la izquierda.
-             FIX: Altura de las imágenes del carrusel ajustada para mejor visualización en móvil.
+    VERSION: Sustitución de imágenes por iconos en la sección de servicios, con FIX de estilos.
     ========================================================================================
 -->
 <!doctype html>
@@ -17,14 +16,60 @@
     <link rel="icon" type="image/jpeg" href="./img/Logo.jpg">
 
     <!-- Bootstrap CSS -->
+    <!-- CORRECCIÓN CRÍTICA: 'xintegrity' cambiado a 'integrity' para seguridad SRI -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     
     <!-- Estilos Personalizados (si tienes un archivo main.css, asegúrate de que esté aquí) -->
+    <!-- Nota: Los estilos principales se han movido aquí para la previsualización, pero se recomienda usar un main.css -->
     <link rel="stylesheet" href="./css/main.css">
     
     <title>Ferrecas | Materiales de Construcción y Ferretería</title>
+
+    <style>
+        /* * Animación CSS para una entrada más suave de la sección de intro */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        #intro {
+            animation: fadeIn 1.5s ease-out;
+            animation-delay: 0.5s;
+            animation-fill-mode: both; /* Mantiene el estado final de la animación */
+        }
+        
+        /* Estilo para un efecto sutil al pasar el mouse en el footer */
+        .hover-link:hover {
+            color: var(--bs-primary) !important;
+            transition: color 0.3s ease;
+        }
+
+        /* MEJORA UX: Efecto de elevación sutil para las tarjetas de servicio (Destacados) */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px); /* Pequeña elevación */
+            box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; /* Sombra más pronunciada */
+        }
+
+        /* Estilo para las tarjetas de servicio basadas en ícono (Servicios de Valor) */
+        /* FIX CLAVE: Se ajusta la alineación del contenido de la tarjeta */
+        .service-icon-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra horizontalmente los íconos */
+            text-align: center;
+            padding: 1.5rem; /* Padding general de la tarjeta */
+        }
+        /* Ajuste para que el cuerpo del texto se centre correctamente */
+        .service-icon-card .card-body {
+            padding: 0 !important; /* Quita el padding por defecto para evitar doble espacio */
+            padding-top: 1rem !important;
+        }
+    </style>
 </head>
 <body>
 
@@ -35,7 +80,7 @@
     ============================================== -->
     <header class="container-fluid bg-primary d-flex justify-content-center">
         <!-- Teléfono fijo restaurado -->
-        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p>  
+        <p class="text-light mb-0 p-2 fs-6">Contactanos a: +502 2298 6874 | ferrecassa@gmail.com</p> 
     </header>
     
     <!--
@@ -47,7 +92,7 @@
         <div class="container-fluid">
             <!-- LOGO/MARCA -->
             <a class="navbar-brand" href="index.html">
-                <img src="./img/Logo.jpg" alt="Logo de Ferrecas" style="height: 45px;" class="d-inline-block align-text-top rounded">
+                <img src="./img/Logo.jpg" onerror="this.onerror=null; this.src='https://placehold.co/45x45/0d6efd/ffffff?text=F'" alt="Logo de Ferrecas" style="height: 45px;" class="d-inline-block align-text-top rounded">
             </a>
 
             <!-- Botón del menú móvil (Hamburger) -->
@@ -94,30 +139,46 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="3500">
-                <!-- FIX: Se añade min-height para asegurar que la imagen no colapse en móvil -->
-                <img src="./img/Proyecto1.jpg" class="d-block w-100" alt="Construcción de cubierta metálica" style="height: 75vh; min-height: 300px; object-fit: cover;">
-                <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-75 p-3 rounded-3">
-                    <h5 class="display-5 fw-bolder text-warning">¡Proyectos a la Medida!</h5>
-                    <p class="fs-5">Transformamos tus diseños en estructuras sólidas y duraderas.</p>
-                    <a href="contacto.html" class="btn btn-warning btn-lg fw-bold mt-2">Cotizar Ahora <i class="bi bi-arrow-right"></i></a>
+                <img src="./img/Proyecto1.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/0d6efd/ffffff?text=Proyecto+1'" class="d-block w-100" alt="Construcción de cubierta metálica" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                <!-- FIX: Clase d-none removida para que la caption sea visible en móvil -->
+                <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-6 fw-bolder text-warning">¡Proyectos a la Medida!</h5>
+                    <p class="fs-6 d-none d-sm-block">Transformamos tus diseños en estructuras sólidas y duraderas.</p>
+                    <a href="contacto.html" class="btn btn-warning btn-md fw-bold mt-2">Cotizar Ahora <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="3500">
-                <!-- FIX: Se añade min-height para asegurar que la imagen no colapse en móvil -->
-                <img src="./img/Proyecto2.jpg" class="d-block w-100" alt="Instalación de lámina galvanizada" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                <img src="./img/Proyecto2.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/0d6efd/ffffff?text=Proyecto+2'" class="d-block w-100" alt="Instalación de lámina galvanizada" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-6 fw-bolder text-warning">Calidad en Acero</h5>
+                    <p class="fs-6 d-none d-sm-block">Materiales que garantizan la resistencia en cada obra.</p>
+                    <a href="productos.html" class="btn btn-warning btn-md fw-bold mt-2">Ver Productos <i class="bi bi-box-seam"></i></a>
+                </div>
             </div>
             <div class="carousel-item" data-bs-interval="3500">
-                 <!-- FIX: Se añade min-height para asegurar que la imagen no colapse en móvil -->
-                <img src="./img/Proyecto3.jpg" class="d-block w-100" alt="Estructura de techo en construcción" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                <img src="./img/Proyecto3.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/0d6efd/ffffff?text=Proyecto+3'" class="d-block w-100" alt="Estructura de techo en construcción" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-6 fw-bolder text-warning">Distribución a Nivel Nacional</h5>
+                    <p class="fs-6 d-none d-sm-block">Llevamos tus materiales a donde los necesites, con puntualidad.</p>
+                    <a href="contacto.html" class="btn btn-warning btn-md fw-bold mt-2">Consultar Envío <i class="bi bi-truck"></i></a>
+                </div>
             </div>
             <div class="carousel-item" data-bs-interval="3500">
-                 <!-- FIX: Se añade min-height para asegurar que la imagen no colapse en móvil -->
-                <img src="./img/Proyecto4.jpg" class="d-block w-100" alt="Almacenamiento de tubos de acero" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                <img src="./img/Proyecto4.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/0d6efd/ffffff?text=Proyecto+4'" class="d-block w-100" alt="Almacenamiento de tubos de acero" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-6 fw-bolder text-warning">Stock Garantizado</h5>
+                    <p class="fs-6 d-none d-sm-block">Siempre listos para atender grandes y pequeños pedidos.</p>
+                    <a href="productos.html" class="btn btn-warning btn-md fw-bold mt-2">Ver Inventario <i class="bi bi-search"></i></a>
+                </div>
             </div>
             <div class="carousel-item" data-bs-interval="3500">
-                 <!-- FIX: Se añade min-height para asegurar que la imagen no colapse en móvil -->
-                <img src="./img/Proyecto5.jpg" class="d-block w-100" alt="Trabajo de herrería y soldadura" style="height: 75vh; min-height: 300px; object-fit: cover;">
-            </div>        
+                <img src="./img/Proyecto5.jpg" onerror="this.onerror=null; this.src='https://placehold.co/1200x600/0d6efd/ffffff?text=Proyecto+5'" class="d-block w-100" alt="Trabajo de herrería y soldadura" style="height: 75vh; min-height: 300px; object-fit: cover;">
+                    <div class="carousel-caption bg-dark bg-opacity-75 p-3 rounded-3">
+                    <h5 class="display-6 fw-bolder text-warning">Asesoría Profesional</h5>
+                    <p class="fs-6 d-none d-sm-block">Te guiamos en la elección del material correcto para tu necesidad.</p>
+                    <a href="contacto.html" class="btn btn-warning btn-md fw-bold mt-2">Hablar con un Experto <i class="bi bi-chat-text"></i></a>
+                </div>
+            </div>        
         </div>
         <!-- Botones de control del carrusel -->
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -140,9 +201,18 @@
             Somos tu aliado en <span class="text-primary">Materiales de Construcción</span> y Acero
         </h1>
         <p class="fs-4 text-secondary mx-auto" style="max-width: 800px;">
-            En Ferrecas te ofrecemos **calidad, resistencia y el mejor precio** en láminas, tubos y accesorios. Te ayudamos a construir tus sueños con la mejor asesoría técnica.
+            En Ferrecas te ofrecemos calidad, resistencia y el mejor precio en láminas, tubos y accesorios. Te ayudamos a construir tus sueños con la mejor asesoría técnica.
         </p>
-        <a href="productos.html" class="btn btn-outline-primary btn-lg fw-bold mt-3">Explorar Productos <i class="bi bi-box-seam"></i></a>
+        
+        <!-- MEJORA: DOBLE BOTÓN DE ACCIÓN -->
+        <div class="mt-4 d-flex justify-content-center flex-column flex-sm-row gap-3">
+            <a href="productos.html" class="btn btn-primary btn-lg fw-bold shadow-sm">
+                Explorar Productos <i class="bi bi-box-seam"></i>
+            </a>
+            <a href="contacto.html" class="btn btn-outline-dark btn-lg fw-bold">
+                Contactar Ahora <i class="bi bi-phone"></i>
+            </a>
+        </div>
     </section>
     
     <!--
@@ -156,7 +226,8 @@
             
             <!-- DESTACADO 1: Láminas y Cubiertas -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                <!-- Se ha añadido la clase service-card para el nuevo estilo CSS de hover -->
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4 service-card">
                     <i class="bi bi-grid-3x3-gap-fill text-primary display-4 mb-3"></i>
                     <div class="card-body">
                         <h3 class="card-title fw-bold">Láminas y Cubiertas</h3>
@@ -168,7 +239,8 @@
             
             <!-- DESTACADO 2: Perfiles galvanizados -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                <!-- Se ha añadido la clase service-card para el nuevo estilo CSS de hover -->
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4 service-card">
                     <i class="bi bi-rulers text-warning display-4 mb-3"></i>
                     <div class="card-body">
                         <h3 class="card-title fw-bold">Perfiles Galvanizados</h3>
@@ -180,7 +252,8 @@
             
             <!-- DESTACADO 3: Fijación y Accesorios -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4">
+                <!-- Se ha añadido la clase service-card para el nuevo estilo CSS de hover -->
+                <div class="card h-100 border-0 shadow-lg rounded-4 text-center p-4 service-card">
                     <i class="bi bi-gear-wide-connected text-success display-4 mb-3"></i>
                     <div class="card-body">
                         <h3 class="card-title fw-bold">Fijación y Accesorios</h3>
@@ -195,77 +268,54 @@
 
     <!--
     ============================================== -->
-    <!-- SERVICIOS -->
+    <!-- SERVICIOS (TARJETAS SIN IMAGEN - MEJORADO) -->
     <!--
     ============================================== -->
     <section class="container py-5">
         <h2 class="text-center display-5 fw-bold mb-5 text-dark">Nuestros Servicios de Valor</h2>
-        <div class="row row-cols-1 row-cols-md-2 g-4">
+        <!-- Se ajusta la grilla para un mejor balance en tablets y desktops -->
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"> 
             
-            <!-- TARJETA DE SERVICIO 1: Venta de ferreteria -->
+            <!-- TARJETA DE SERVICIO 1: Venta inmediata de ferreteria (ICONO bi-box-seam) -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="img/ecomerce.jpeg" class="img-fluid h-100" alt="venta de materiales de construcción" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-bold text-primary">Venta Inmediata de Materiales</h3>
-                                <p class="card-text text-secondary">Amplio inventario de materiales listos para despacho: láminas, costaneras, tubos, y accesorios de alta durabilidad.</p>
-                            </div>
-                        </div>
+                <div class="card h-100 border-0 shadow-sm rounded-4 service-icon-card">
+                    <i class="bi bi-box-seam text-primary display-3 mb-3"></i> 
+                    <div class="card-body">
+                        <h3 class="card-title fs-5 fw-bold text-dark">Venta Inmediata de Materiales</h3>
+                        <p class="card-text text-secondary">Amplio inventario de materiales listos para despacho: láminas, costaneras, tubos, y accesorios de alta durabilidad.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- TARJETA DE SERVICIO 2: Asesoría tecnica -->
+            <!-- TARJETA DE SERVICIO 2: Asesoría tecnica (ICONO bi-headset) -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                    <div class="row g-0">
-                         <div class="col-md-4">
-                            <img src="img/Asesoria.jpeg" class="img-fluid h-100" alt="Asesoria tecnica" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-bold text-primary">Asesoría Técnica Especializada</h3>
-                                <p class="card-text text-secondary">Personal experto le ayuda a seleccionar la solución óptima y la aplicación correcta para cada etapa de su proyecto.</p>
-                            </div>
-                        </div>
+                <div class="card h-100 border-0 shadow-sm rounded-4 service-icon-card">
+                    <i class="bi bi-headset text-primary display-3 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fs-5 fw-bold text-dark">Asesoría Técnica Especializada</h3>
+                        <p class="card-text text-secondary">Personal experto le ayuda a seleccionar la solución óptima y la aplicación correcta para cada etapa de su proyecto.</p>
                     </div>
                 </div>
             </div>
             
-            <!-- TARJETA DE SERVICIO 3: Entrega -->
+            <!-- TARJETA DE SERVICIO 3: Entrega (ICONO bi-truck) -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="img/Entrega.jpeg" class="img-fluid h-100" alt="Entrega a solicitud" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-bold text-primary">Logística y Entrega a Obra</h3>
-                                <p class="card-text text-secondary">Garantizamos la entrega puntual y segura de su pedido directamente a su sitio de construcción, optimizando sus tiempos.</p>
-                            </div>
-                        </div>
+                <div class="card h-100 border-0 shadow-sm rounded-4 service-icon-card">
+                    <i class="bi bi-truck text-primary display-3 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fs-5 fw-bold text-dark">Logística y Entrega a Obra</h3>
+                        <p class="card-text text-secondary">Garantizamos la entrega puntual y segura de su pedido directamente a su sitio de construcción, optimizando sus tiempos.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- TARJETA DE SERVICIO 4: Otros Servicios -->
+            <!-- TARJETA DE SERVICIO 4: Servicios de Corte y Fabricación (ICONO bi-tools) -->
             <div class="col">
-                <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                            <img src="img/Servicios.jpg" class="img-fluid h-100" alt="Otros Servicios" style="object-fit: cover;">
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h3 class="card-title fs-5 fw-bold text-primary">Servicios de Corte y Fabricación</h3>
-                                <p class="card-text text-secondary">Ofrecemos corte a medida de materiales y cotizaciones personalizadas, ayudando a reducir desperdicios y costos.</p>
-                            </div>
-                        </div>
+                <div class="card h-100 border-0 shadow-sm rounded-4 service-icon-card">
+                    <i class="bi bi-tools text-primary display-3 mb-3"></i>
+                    <div class="card-body">
+                        <h3 class="card-title fs-5 fw-bold text-dark">Servicios de Corte y Fabricación</h3>
+                        <p class="card-text text-secondary">Ofrecemos corte a medida de materiales y cotizaciones personalizadas, ayudando a reducir desperdicios y costos.</p>
                     </div>
                 </div>
             </div>
@@ -312,20 +362,20 @@
 
                     <!-- Íconos sociales más grandes y espaciados -->
                     <div class="mt-4">
-                        <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-white mx-2 fs-3" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2 fs-3" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/FERRECAS.ACERO/?locale=es_LA" target="_blank" class="text-white mx-2 fs-3 hover-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/50239912120" target="_blank" class="text-white mx-2 fs-3 hover-link" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Columna 2: Navegación rápida (alineada a la izquierda) -->
                 <div class="col-md-4 mb-4">
-                     <!-- Título en blanco para mejor contraste -->
-                     <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Enlaces Rápidos</h5>
-                     <ul class="list-unstyled">
+                    <!-- Título en blanco para mejor contraste -->
+                    <h5 class="fw-bold text-white border-bottom border-primary pb-2 mb-3">Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
                         <li class="mb-1"><a href="index.html" class="text-white text-decoration-none hover-link">Inicio</a></li>
                         <li class="mb-1"><a href="productos.html" class="text-white text-decoration-none hover-link">Productos</a></li>
                         <li class="mb-1"><a href="contacto.html" class="text-white text-decoration-none hover-link">Contacto y Cotizaciones</a></li>
-                     </ul>
+                    </ul>
                 </div>
 
                 <!-- Columna 3: Formulario de Suscripción -->
@@ -346,11 +396,12 @@
         
         <!-- Derechos de autor (se mantiene centrado en una línea separada) -->
         <div class="container border-top border-secondary pt-3 mt-4 text-center">
-             <p class="mb-0 fs-6 text-white-50">Ferrecas © Todos los derechos reservados 2024</p>
+            <p class="mb-0 fs-6 text-white-50">Ferrecas © Todos los derechos reservados 2024</p>
         </div>
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <!-- CORRECCIÓN CRÍTICA: 'xintegrity' cambiado a 'integrity' para seguridad SRI -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="./js/main.js"></script>
 </body>

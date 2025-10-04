@@ -17,12 +17,22 @@ body {
 #menu form > button {
     font-size: 18px;
     font-weight:bold;
-  
 }
 
 /*======= SLIDER DE IMAGENES =======*/
 .carousel-inner {
     max-height: 39rem;
+}
+
+/* ============ PRODUCTOS (CATÁLOGO) ============ */
+/*
+    Ajuste CLAVE: Se añaden las propiedades de object-fit y object-position
+    para asegurar que las imágenes de producto se vean completas (contain)
+    y centradas.
+*/
+.card-img {
+    object-fit: contain;
+    object-position: center;
 }
 
 /*======= MEDIA QUERIES PANTALLA SM =======*/
@@ -41,6 +51,7 @@ body {
         text-align: center;
     }
     
+    /* Regla ajustada para mover la sección de contacto en móvil */
     #bg-contacto {
         position:relative;
         top:-110px;
@@ -71,65 +82,54 @@ body {
     }
 }
 
-/*======= EQUIPO GUATEMALA =======*/
-
 /*======= CONTACTOS BACKGROUND =======*/
 #bg-contacto {
     position:relative;
     top:-130px;
 }
 
+/* Sección de Contacto: 
+    Nota: La regla 'min-height: 550px' podría ser demasiado restrictiva. 
+    Permitiremos que el contenido defina la altura, pero se mantiene para consistencia.
+*/
 #seccion-contacto {
     background-color: #1b2a4e;
-    min-height: 550px;
-    /*position: relative;*/
+    min-height: 550px; 
     display: flex; 
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente */
+    justify-content: center; 
+    align-items: center;
 }
 
 /*======= CONTACTOS FORMULARIO =======*/
 #contenedor-formulario{
-    /*position:absolute;
-    top:30%;
-    left:50%;
-    transform: translate(-50%, -50%);*/
     background:#fbfafa ;
     border-radius: 5px;
-    max-width: 246px;
-    padding: 20px; /* Añadimos padding para que el contenido no toque los bordes */
-    /* Agregamos una sombra suave para destacarlo */
+    padding: 20px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
+
 #titulo-formulario {
     color: #3f3f3f;
-}
-
-#contenedor-formulario{
-    font-family: verdana;
-    margin: 10px auto;
-
 }
 
 /*======= MAPA =======*/
 
 /* CLAVE 1: Anula Flexbox o Grid en el contenedor padre */
 #local {
-    /* Si Bootstrap lo hizo flexible, lo forzamos a ser un bloque normal */
     display: block !important; 
 }
 
 /* CLAVE 2: Asegura que el contenedor de texto ocupe todo el ancho y se comporte como bloque */
 .texto-ubicacion {
-    width: 100% !important; /* Fuerza el ancho */
-    display: block !important; /* Fuerza el comportamiento de bloque */
+    width: 100% !important; 
+    display: block !important; 
     margin-bottom: 20px;
 }
 
 /* CLAVE 3: Asegura que el mapa se comporte como un bloque de ancho completo */
 .mapa-incrustado {
-    width: 100% !important; /* Fuerza el ancho */
-    display: block !important; /* Fuerza a iniciar en una nueva línea */
+    width: 100% !important; 
+    display: block !important; 
     height: 450px; 
     border: none; 
 }
@@ -137,7 +137,6 @@ body {
 
 #local {
     background-color: #f3f3f3;
-    /*padding-bottom: 300px;*/
     display:flex;
     justify-content: center;
 }
